@@ -1,0 +1,7 @@
+﻿  Source.cpp
+d:\документы\3 курс\программирование и безопасность сетевых приложений\лабораторные работы\№5\clients\clients\source.cpp(166): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\winsock2.h(1848): note:  см. объявление "inet_ntoa"
+d:\документы\3 курс\программирование и безопасность сетевых приложений\лабораторные работы\№5\clients\clients\source.cpp(187): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\winsock2.h(2218): note:  см. объявление "gethostbyname"
+  ClientS.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№5\ClientS\Debug\ClientS.exe
+  ClientS.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№5\ClientS\Debug\ClientS.pdb (Partial PDB)

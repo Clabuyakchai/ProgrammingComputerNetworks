@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\документы\3 курс\программирование и безопасность сетевых приложений\лабораторные работы\№6\clientnpct\clientnpct\source.cpp(133): warning C4101: cH: неиспользованная локальная переменная
+  ClientNPct.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№6\ClientNPct\Debug\ClientNPct.exe
+  ClientNPct.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№6\ClientNPct\Debug\ClientNPct.pdb (Partial PDB)

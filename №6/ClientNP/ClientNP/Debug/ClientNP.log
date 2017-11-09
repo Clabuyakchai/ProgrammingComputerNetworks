@@ -1,0 +1,7 @@
+﻿  Source.cpp
+d:\документы\3 курс\программирование и безопасность сетевых приложений\лабораторные работы\№6\clientnp\clientnp\source.cpp(174): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note:  см. объявление "strcpy"
+d:\документы\3 курс\программирование и безопасность сетевых приложений\лабораторные работы\№6\clientnp\clientnp\source.cpp(187): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note:  см. объявление "strcpy"
+  ClientNP.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№6\ClientNP\Debug\ClientNP.exe
+  ClientNP.vcxproj -> D:\Документы\3 курс\Программирование и безопасность сетевых приложений\Лабораторные работы\№6\ClientNP\Debug\ClientNP.pdb (Partial PDB)
