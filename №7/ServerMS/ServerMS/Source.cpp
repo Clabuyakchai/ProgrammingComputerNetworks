@@ -130,17 +130,26 @@ string SetErrorMsgText(string msgText, int code)
 
 int main()
 {
-	HANDLE sH;
-	char bufRead[50];
+	HANDLE hM;
 	DWORD dwRead;
+	DWORD dwWrite;
 
-	if((sH = CreateMailslot(TEXT("\\\\.\\mailslot\\BOX"), NULL, MAILSLOT_WAIT_FOREVER, NULL)) == INVALID_HANDLE_VALUE)
+	if((hM = CreateMailslot(TEXT("\\\\.\\mailslot\\BOX"), NULL, MAILSLOT_WAIT_FOREVER, NULL)) == INVALID_HANDLE_VALUE)
 		throw SetErrorMsgText("CreateMailslot:", WSAGetLastError());
 
-	if(!(ReadFile(sH, bufRead, sizeof(bufRead), &dwRead, NULL)))
-		throw SetErrorMsgText("CreateMailslot:", WSAGetLastError());
+	while(true)
+	{
+		char messageClient[50];
 
-	CloseHandle(sH);
+		memset(&messageClient, 0, sizeof(messageClient));
+
+		if (!(ReadFile(hM, messageClient, sizeof(messageClient), &dwRead, NULL)))
+			throw SetErrorMsgText("read: ", WSAGetLastError());
+		
+		cout << messageClient << endl;
+	} 
+
+	CloseHandle(hM);
 
 	return 0;
 }

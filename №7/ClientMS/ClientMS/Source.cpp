@@ -128,13 +128,54 @@ string SetErrorMsgText(string msgText, int code)
 	return msgText + GetErrorMsgText(code);
 };
 
+void prepareString(string &str, int i, string message)
+{
+	str.append(message);
+	str.append(" ");
+
+	if (i < 10) {
+		str.append("00");
+		str.append(std::to_string(i));
+	}
+	else if (i < 100) {
+		str.append("0");
+		str.append(std::to_string(i));
+	}
+	else {
+		str.append(std::to_string(i));
+	}
+}
+
 int main()
 {
-	HANDLE hM;
-	char bufWrite[50];
+	HANDLE cM;
+	string hello = "Hello from Client ";
 	DWORD dwWrite;
+	
 
-	if((hM = CreateFile(TEXT("\\\\.\\mailslot\\BOX"), )))
+	if((cM = CreateFile(TEXT("\\\\.\\mailslot\\BOX"), GENERIC_WRITE,
+		FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, NULL, NULL)) == INVALID_HANDLE_VALUE)
+		throw SetErrorMsgText("CreateFile:", WSAGetLastError());
+
+	int counter = 0;
+	cout << "Input the number of messages: ";
+	cin >> counter;
+
+	for (int i = 1; i <= counter; i++)
+	{
+		string messageCliet = "";
+
+		prepareString(messageCliet, i, hello);
+
+		char *mass = new char[messageCliet.length() + 1];
+		strcpy(mass, messageCliet.c_str());
+
+		if (!(WriteFile(cM, mass, strlen(mass), &dwWrite, NULL)))
+			throw SetErrorMsgText("write: ", WSAGetLastError());
+
+		delete[] mass;
+	}
+	//system("pause");
 
 	return 0;
 }
